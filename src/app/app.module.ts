@@ -4,10 +4,26 @@ import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {HeroDetailComponent} from './hero-detail.component';
+import {HeroService} from './hero.service';
+import {HeroesComponent} from './heroes.component';
+import {RouterModule} from '@angular/router';
+import {DashboardComponent} from './dashboard.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, HeroDetailComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([
+
+    ]),
+  ],
+  declarations: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent,
+  ],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
