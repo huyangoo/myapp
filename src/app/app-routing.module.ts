@@ -1,9 +1,10 @@
-import {Router, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {HeroDetailComponent} from './hero-detail.component';
 import {DashboardComponent} from './dashboard.component';
 import {HeroesComponent} from './heroes.component';
+import {NgModule} from '@angular/core';
 
-const routes: Router = [
+const routes: Routes = [
   {
     path: 'heroes',
     component: HeroesComponent,
@@ -19,4 +20,11 @@ const routes: Router = [
     component: HeroDetailComponent
   },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {
+}
 
